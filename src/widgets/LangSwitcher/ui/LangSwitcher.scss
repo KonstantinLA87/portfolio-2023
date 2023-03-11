@@ -1,0 +1,45 @@
+.lang_btn {
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 50px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background: #0a1520;
+    .lang_icon {
+      opacity: 1;
+      path, line, polyline {
+        stroke: #fff;
+      }
+    }
+  }
+}
+
+.lang_icon {
+  width: 22px;
+  vertical-align: bottom;
+  position: relative;
+  transition: opacity 0.1s;
+  opacity: .5;
+  margin-right: 10px;
+
+  path, line, polyline {
+    transition: stroke 0.2s;
+    stroke-width: 2;
+    stroke: #00C2FF;
+  }
+}
+
+.lang_text {
+  font-size: 14px;
+  color: #03698E;
+  span:nth-of-type(2) {
+    opacity: .5;
+  }
+  .active {
+    color: #fff;
+  }
+}

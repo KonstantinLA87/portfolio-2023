@@ -1,0 +1,28 @@
+.ThemeSwitcher {
+  cursor: pointer;
+  padding: 5px 7px;
+  border-radius: 60px;
+  border: none;
+  background: #0F2235;
+  display: flex;
+  align-items: center;
+
+  > div {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+  }
+
+  svg {
+    width: 28px;
+    height: 28px;
+    stroke-width: 1.5px;
+  }
+
+  &:hover {
+    background: #12293f;
+  }
+}
+

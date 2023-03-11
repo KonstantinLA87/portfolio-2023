@@ -1,0 +1,18 @@
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.5" clip-path="url(#clip0_332_782)">
+    <path class="light-circle" d="M14 22C18.4183 22 22 18.4183 22 14C22 9.58172 18.4183 6 14 6C9.58172 6 6 9.58172 6 14C6 18.4183 9.58172 22 14 22Z" stroke-width="1.5"/>
+    <path class="light-line" d="M0 14H2.1" stroke-width="1.5"/>
+    <path class="light-line" d="M25.8999 14H27.9999" stroke-width="1.5"/>
+    <path class="light-line" d="M4 23.7999L5.48 22.3199" stroke-width="1.5"/>
+    <path class="light-line" d="M22.3201 5.48L23.8001 4" stroke-width="1.5"/>
+    <path class="light-line" d="M14 28V25.9" stroke-width="1.5"/>
+    <path class="light-line" d="M14 2.1V0" stroke-width="1.5"/>
+    <path class="light-line" d="M23.8001 23.7999L22.3201 22.3199" stroke-width="1.5"/>
+    <path class="light-line" d="M5.48 5.48L4 4" stroke-width="1.5"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_332_782">
+      <rect width="28" height="28" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
