@@ -2,15 +2,20 @@ import './MainPage.scss'
 import { Player } from '@lottiefiles/react-lottie-player';
 import { classNames } from '../../../shared/lib/classNames/classNames';
 import { Link } from 'react-router-dom';
+import { SkillsItem } from 'widgets/SkillsItem/ui/SkillsItem';
+import { useTranslation } from 'react-i18next';
 
 interface MainPageProps {
   className?: string;
 }
 
 const MainPage = ({className}: MainPageProps ) => {
+  const { t } = useTranslation();
+
   return (
     <div className={classNames('MainPage', {}, [className])}>
       <div className="container">
+        <p className="main__name">{t('Labzov Konstantin')}</p>
         <Player
             autoplay
             loop={false}
@@ -21,7 +26,11 @@ const MainPage = ({className}: MainPageProps ) => {
           >
         </Player>
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> 
-        <a style={{color: '#fff'}}>Some</a>
+
+        {/* <div className="skills__wrap" style={{margin: '200px 0',}}>
+          <SkillsItem />
+          <SkillsItem className="inverted" />
+        </div> */}
       </div>
     </div>
   );

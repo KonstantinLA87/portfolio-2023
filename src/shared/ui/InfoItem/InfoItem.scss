@@ -1,0 +1,27 @@
+.skills__info-item {
+  width: 45%;
+  h4 {
+    margin-bottom: 30px;
+  }
+  ul {
+    width: 100%;
+    opacity: .8;
+    li {
+      margin-bottom: 10px;
+      &:before {
+        top: 8px;
+        opacity: .3;
+      }
+    }
+  }
+}
+
+.skills__info-icons {
+  height: 61px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  svg, img {
+    margin-right: 15px;
+  }
+}

@@ -8,7 +8,7 @@
   align-items: center;
   cursor: pointer;
   &:hover {
-    background: #0a1520;
+    // background: #0a1520;
     .lang_icon {
       opacity: 1;
       path, line, polyline {
@@ -42,4 +42,8 @@
   .active {
     color: #fff;
   }
+}
+
+.lang__separate {
+  margin: 0 5px;
 }

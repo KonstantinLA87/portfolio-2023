@@ -1,0 +1,57 @@
+@import './reset.scss';
+@import './variables/globals.scss';
+@import './themes/dark.scss';
+@import './themes/light.scss';
+
+body {
+  font-family: Inter, 'Open Sans';
+  font-weight: 300;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.App {
+  min-height: 100vh;
+  background: var(--bg-color);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+ul {
+  list-style-type: none;
+  li {
+    padding-left: 20px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 13px;
+      background: #fff;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+    }
+  }
+}
+
+// Typography
+
+h1 {
+  text-transform: uppercase;
+  font-size: 70px;
+  font-weight: 900;
+  span {
+    color: var(--primary-color);
+  }
+}
+h4 {
+  font-size: 24px;
+  font-weight: 400;
+}

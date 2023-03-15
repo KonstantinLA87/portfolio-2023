@@ -1,6 +1,10 @@
 import { Navbar } from '../widgets/Navbar';
-import { MainPage } from 'pages/MainPage';
 import { Suspense } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import { MainPage } from 'pages/MainPage';
+import { SkillsPage } from 'pages/SkillsPage';
+import { AboutPage } from 'pages/AboutPage';
+import { Loader } from 'shared/ui/Loader/Loader';
 
 function App() {
 
@@ -8,8 +12,12 @@ function App() {
       <div className="App app_dark_theme">
         <Suspense fallback="">
           <Navbar />
-          <Suspense fallback='...'>
-            <MainPage />
+          <Suspense fallback={<Loader />}>
+            <Routes>
+              <Route path="/" element={<MainPage />} />
+              <Route path="/skills" element={<SkillsPage />} />
+              <Route path="/about" element={<AboutPage />} />
+            </Routes>
           </Suspense>
         </Suspense>
       </div>

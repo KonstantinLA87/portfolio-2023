@@ -1,6 +1,8 @@
 .app_dark_theme {
   --bg-color: #060D14;
+  color: #fff;
 }
+
 
 .dark-path {
   fill: var(--primary-color);
@@ -10,4 +12,8 @@
   opacity: .5;
   fill: transparent;
   stroke: var(--primary-color);
+}
+
+h1 {
+  color: #fff;
 }

@@ -1,0 +1,19 @@
+.NavbarLink {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  background: transparent;
+  border-radius: 4px;
+  font-size: 17px;
+  line-height: 32px;
+  transition: .1s;
+  &:hover {
+    background: #04090f;
+    color: var(--primary-color);
+  }
+  &.active {
+    background: #0A1826;
+    cursor: auto;
+    color: var(--primary-color);
+  }
+}

@@ -23,7 +23,7 @@ export const LangSwitcher: FC<LangSwitcherProps> = memo(({ className }) => {
         <LangIcon className='lang_icon' />
         <p className='lang_text'>
           <span className={i18n.language === 'ru' ? 'active' : ''}>RU</span>
-          <span> / </span>
+          <span className="lang__separate"> | </span>
           <span className={i18n.language === 'ru' ? '' : 'active'}>EN</span>
         </p>
       </button>
