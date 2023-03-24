@@ -10,6 +10,7 @@ import { ReactComponent as MailIcon } from 'shared/assets/img/contacts-mail.svg'
 import { ReactComponent as LinkedinIcon } from 'shared/assets/img/contacts-linked.svg';
 import { ReactComponent as HhIcon } from 'shared/assets/img/contacts-hh.svg';
 import { ReactComponent as CopyIcon } from 'shared/assets/img/i-copy.svg';
+import { CopyButton } from 'shared/ui/CopyButton/CopyButton';
 
 interface ContactsPageProps {
   className?: string;
@@ -19,7 +20,6 @@ const ContactsPage: FC<ContactsPageProps> = ({className}) => {
   const { t } = useTranslation('contacts');
   const [ selectedTabId, setselectedTabId ] = useState('');
   const [ contactLink, setContactLink ] = useState('');
-  const [ copiedLink, setCopiedLink ] = useState(false);
 
   const tabs: ContactsTabProps[] = [
     {
@@ -45,17 +45,12 @@ const ContactsPage: FC<ContactsPageProps> = ({className}) => {
   ]
 
   const handleTabClick = (id: string, link: string) => {
-    setselectedTabId(id);
+    setselectedTabId('');
+    setTimeout(() => {
+      setselectedTabId(id);
+    }, 100)
     setContactLink(link);
   }
-
-  const onCopy = useCallback(() => {
-    navigator.clipboard.writeText(contactLink);
-    setCopiedLink(true);
-    setTimeout(() => {
-      setCopiedLink(false);
-    }, 1000);
-  }, [contactLink]);
 
   return (
     <Page className={classNames('ContactsPage', {}, [className])}>
@@ -69,15 +64,7 @@ const ContactsPage: FC<ContactsPageProps> = ({className}) => {
         {selectedTabId && (
           <span className="contacts__link">
             <>{contactLink}</>
-            <button
-              className={classNames("contacts__copy", {'copied': copiedLink})}
-              onClick={onCopy}
-            >
-              <CopyIcon />
-              <div className="contacts__copy-tooltip">
-                Copied!
-              </div>
-            </button>
+            <CopyButton text={contactLink} />
           </span>
         )}
       </div>
