@@ -5,6 +5,7 @@ import { MainPage } from 'pages/MainPage';
 import { SkillsPage } from 'pages/SkillsPage';
 import { AboutPage } from 'pages/AboutPage';
 import { Loader } from 'shared/ui/Loader/Loader';
+import { ContactsPage } from 'pages/ContactsPage';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
               <Route path="/" element={<MainPage />} />
               <Route path="/skills" element={<SkillsPage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/contacts" element={<ContactsPage />} />
             </Routes>
           </Suspense>
         </Suspense>

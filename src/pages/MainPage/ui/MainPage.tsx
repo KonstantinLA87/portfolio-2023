@@ -4,16 +4,17 @@ import { classNames } from '../../../shared/lib/classNames/classNames';
 import { Link } from 'react-router-dom';
 import { SkillsItem } from 'widgets/SkillsItem/ui/SkillsItem';
 import { useTranslation } from 'react-i18next';
+import { Page } from 'shared/ui/Page/Page';
 
 interface MainPageProps {
   className?: string;
 }
 
 const MainPage = ({className}: MainPageProps ) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('main');
 
   return (
-    <div className={classNames('MainPage', {}, [className])}>
+    <Page className={classNames('MainPage', {}, [className])}>
       <div className="container">
         <p className="main__name">{t('Labzov Konstantin')}</p>
         <Player
@@ -26,13 +27,8 @@ const MainPage = ({className}: MainPageProps ) => {
           >
         </Player>
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> 
-
-        {/* <div className="skills__wrap" style={{margin: '200px 0',}}>
-          <SkillsItem />
-          <SkillsItem className="inverted" />
-        </div> */}
       </div>
-    </div>
+    </Page>
   );
 };
 

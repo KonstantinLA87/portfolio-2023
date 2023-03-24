@@ -1,5 +1,6 @@
 import './InfoItem.scss'
 import { memo } from 'react';
+import { ReactComponent as LangIcon} from 'shared/assets/img/lang.svg';
 
 interface InfoItemProps {
   title: string;
@@ -12,7 +13,10 @@ export const InfoItem = memo((props: InfoItemProps) => {
 
   return (
     <div className="skills__info-item">
-      <h4>{title}</h4>
+      <div className="skills-title__wrap">
+        <LangIcon className='test_icon' />
+        <h4>{title}</h4>
+      </div>
           <div className="skills__info-icons">
             {icons.map((icon) => (<img src={`./images/${icon}`} alt=""></img>))}
           </div>

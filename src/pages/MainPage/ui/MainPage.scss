@@ -1,10 +1,12 @@
 .MainPage {
-  padding-top: 130px;
+  padding-top: 190px;
   padding-bottom: 40px;
 }
 
 .main__name {
   font-size: 32px;
+  font-weight: 400;
   color: #2A4767;
+  // color: var(--secondary-color);
   margin-bottom: 5px;
 }

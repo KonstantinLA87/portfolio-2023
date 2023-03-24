@@ -1,14 +1,21 @@
 .Navbar {
+  position: fixed;
+  z-index: 120;
+  left: 0;
+  top: 0;
   width: 100%;
   padding: 10px 30px;
   border-bottom: 1px solid rgba(23, 43, 66, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: var(--bg-color-80);
+  backdrop-filter: blur(10px);
 }
 
 .navbar__logo {
   margin-right: 100px;
+  line-height: 0;
 }
 
 nav {

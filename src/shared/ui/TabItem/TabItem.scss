@@ -1,0 +1,17 @@
+.TabItem {
+  padding: 10px 40px;
+  font-size: 22px;
+  border-radius: 50px;
+  border: 2px solid var(--primary-color-10);
+  transition: .2s;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--primary-color-50);
+  }
+
+  &.active {
+    border-color: var(--primary-color);
+    cursor: auto;
+  }
+}

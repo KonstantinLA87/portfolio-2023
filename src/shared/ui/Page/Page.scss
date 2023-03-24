@@ -1,0 +1,9 @@
+.Page {
+  padding-top: 130px;
+  animation: fadeIn 1s forwards;
+  min-height: 100vh;
+}
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}

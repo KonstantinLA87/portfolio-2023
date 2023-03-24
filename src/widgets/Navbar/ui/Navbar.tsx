@@ -15,18 +15,19 @@ export const Navbar: FC<NavbarProps> = ({className}) => {
   const { t } = useTranslation();
   
   return (
-    <div className={classNames('Navbar', {}, [className])}>
+    <header className={classNames('Navbar', {}, [className])}>
       <div className="navbar__left">
         <LinkLogo className="navbar__logo" />
         <nav>
           <NavbarLink name={t('My Skills')} to='/skills' />
           <NavbarLink name={t('About Me')} to='/about' />
+          <NavbarLink name={t('Contacts')} to='/contacts' />
         </nav>
       </div>
       <div className="navbar__right">
         <LangSwitcher />
         <ThemeSwitcher />
       </div>
-    </div>
+    </header>
   );
 };

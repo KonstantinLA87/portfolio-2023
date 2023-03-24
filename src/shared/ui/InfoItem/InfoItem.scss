@@ -1,7 +1,7 @@
 .skills__info-item {
   width: 45%;
   h4 {
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
   }
   ul {
     width: 100%;
@@ -23,5 +23,22 @@
   margin-bottom: 20px;
   svg, img {
     margin-right: 15px;
+  }
+}
+
+.skills-title__wrap {
+  display: flex;
+  grid-gap: 10px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.test_icon {
+  width: 30px;
+  height: 30px;
+  path, line, polyline {
+    transition: stroke 0.2s;
+    stroke-width: 2.5;
+    stroke: #22444e;
   }
 }
