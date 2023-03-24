@@ -1,0 +1,19 @@
+.LinkButton {
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid var(--primary-color-10);
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  top: -2px;
+  transition: .2s;
+
+  &:hover {
+    background: #0A1826;
+  }
+}

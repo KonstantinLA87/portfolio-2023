@@ -9,8 +9,8 @@ import { ReactComponent as TelegramIcon } from 'shared/assets/img/contacts-tg.sv
 import { ReactComponent as MailIcon } from 'shared/assets/img/contacts-mail.svg';
 import { ReactComponent as LinkedinIcon } from 'shared/assets/img/contacts-linked.svg';
 import { ReactComponent as HhIcon } from 'shared/assets/img/contacts-hh.svg';
-import { ReactComponent as CopyIcon } from 'shared/assets/img/i-copy.svg';
 import { CopyButton } from 'shared/ui/CopyButton/CopyButton';
+import { LinkButton } from 'shared/ui/LinkButton/LinkButton';
 
 interface ContactsPageProps {
   className?: string;
@@ -34,7 +34,7 @@ const ContactsPage: FC<ContactsPageProps> = ({className}) => {
     },
     {
       id: 'linkedin', 
-      link:'www.linkedin.com/in/konstantin-labzov/', 
+      link:'https://www.linkedin.com/in/konstantin-labzov/', 
       children: <LinkedinIcon />
     },
     {
@@ -65,6 +65,9 @@ const ContactsPage: FC<ContactsPageProps> = ({className}) => {
           <span className="contacts__link">
             <>{contactLink}</>
             <CopyButton text={contactLink} />
+            {(selectedTabId === 'linkedin' || selectedTabId === 'hh') && (
+              <LinkButton link={contactLink} />
+            )}
           </span>
         )}
       </div>

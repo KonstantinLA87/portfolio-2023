@@ -11,9 +11,10 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 interface SkillsItemProps {
   className?: string;
   specification: string;
+  text: string[];
 }
 
-export const SkillsItem: FC<SkillsItemProps> = ({className, specification}) => {
+export const SkillsItem: FC<SkillsItemProps> = ({className, specification, text}) => {
   const {t} = useTranslation('skills');
 
   const [opened, setOpened] = useState<boolean>(false);
@@ -49,9 +50,9 @@ export const SkillsItem: FC<SkillsItemProps> = ({className, specification}) => {
       }
       { className === 'inverted' ? <SkillsImg2 className='skills__bg-img' /> : <SkillsImg1 className='skills__bg-img' />}
       <ul>
-        <li>Работа в 2х крупных IT-компаниях Петербурга (SEMrush, Quadcode)</li>
-        <li>Разработка дизайн-макетов + верстка HTML, CSS/SCSS, JS... </li>
-        <li>Еще какая-то херотень на строчку</li>
+        {text.map(item => (
+          <li>{item}</li>
+        ))}
       </ul>
       <Button theme={ButtonTheme.OUTLINED} onClick={onToggle}>
         {!opened ? t('Details') : t('Hide')}

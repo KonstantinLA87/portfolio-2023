@@ -16,8 +16,22 @@ const SkillsPage: FC<SkillsPageProps> = ({className}) => {
     <Page className={classNames('SkillsPage', {}, [className])}>
       <div className="container">
         <div className="skills__wrap">
-          <SkillsItem specification="design" />
-          <SkillsItem specification="frontend" className="inverted" />
+          <SkillsItem 
+            specification="design"
+            text={[
+              'Работа в 2х крупных IT-компаниях Петербурга (SEMrush, Quadcode)',
+              'Разработка дизайн-макетов + верстка HTML, CSS/SCSS, JS... ',
+              'С Figma на Ты. Auto-лэйауты, компоненты, разработка UI-китов и т.д.',
+            ]}
+          />
+          <SkillsItem 
+            className="inverted" 
+            specification="frontend" 
+            text={[
+              'Обучение Javascript, React + Typescript + Redux и т.д. по 8 часов в день,',
+              'практический без выходных в течении полугода',
+            ]}
+          />
         </div>
       </div>
     </Page>

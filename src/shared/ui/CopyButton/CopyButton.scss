@@ -42,6 +42,7 @@
   font-size: 14px;
   display: none;
   animation: fadeInLeft .2s;
+  z-index: 1000;
 
   &:before {
     content: '';

@@ -17,12 +17,12 @@ export const InfoItem = memo((props: InfoItemProps) => {
         <LangIcon className='test_icon' />
         <h4>{title}</h4>
       </div>
-          <div className="skills__info-icons">
-            {icons.map((icon) => (<img src={`./images/${icon}`} alt=""></img>))}
-          </div>
-          <ul>
-            {list.map((listItem) => (<li>{listItem}</li>))}
-          </ul>
+      <div className="skills__info-icons">
+        {icons.map((icon) => (<img src={`./images/${icon}`} alt=""></img>))}
+      </div>
+      <ul>
+        {list.map((listItem) => (<li>{listItem}</li>))}
+      </ul>
     </div>
   );
 });
