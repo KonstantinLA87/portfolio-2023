@@ -5,6 +5,8 @@
   border: 2px solid var(--primary-color-10);
   transition: .2s;
   cursor: pointer;
+  background: transparent;
+  color: #fff;
 
   &:hover {
     border-color: var(--primary-color-50);

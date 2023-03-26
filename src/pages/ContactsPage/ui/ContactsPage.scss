@@ -1,6 +1,11 @@
 .ContactsPage {
   padding-bottom: 130px;
   min-height: 100vh;
+  transition: padding-top .5s;
+
+  &.padding-top {
+    padding-top: 270px;
+  }
 }
 
 .contacts__link {

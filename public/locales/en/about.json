@@ -1,5 +1,21 @@
 {
   "About": "About",
   "me": "me",
-  "chronology": "Chronology"
+  "chronology": "Chronology",
+  "history_2010": "In 2010 he graduated from St. Petersburg State University of Industrial Technologies and Design (SPBGUPTD) with a degree in Graphic Designer",
+  "history_2012": "In 2012, he decided to retrain as a web designer, and almost immediately learned HTML/CSS layout. I got my first job as a web designer. After 3 years freelancing at freelance.ru",
+  "history_2015": "In the summer of 2015, he got a job at the well-known IT company SEMrush in the paid traffic department (PPC). My main tasks included creating design layouts for landing pages, their layout, connecting registration forms and maintaining landing page data on the server. I worked for the company for exactly 4 years.",
+  "history_2019": "From the end of 2019 to the summer of 2022, he worked as an outsourcer for the Estonian company Crezu, also as a web designer",
+  "history_2022": "In August 2022, he got a job at Quadcode where he worked for three months",
+  "November": "Nov",
+  "history_2022nov": "At the end of November 2022, I decided to change my occupation and began to intensively study frontend technologies. Completed 2 courses in basic and advanced Javascript",
+  "January": "Jan",
+  "history_2023jan": "Started learning React as the main framework",
+  "February": "Feb",
+  "history_2023feb": "A 4-month course on advanced React/Typescript has started...",
+  "March": "Mar",
+  "history_2023mar": "Development of my portfolio site",
+  "Web-design": "Web-design",
+  "Frontend Development": "Frontend Development",
+  "main_information": "Main Information"
 }

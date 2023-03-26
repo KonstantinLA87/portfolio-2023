@@ -20,42 +20,48 @@ const ContactsPage: FC<ContactsPageProps> = ({className}) => {
   const { t } = useTranslation('contacts');
   const [ selectedTabId, setselectedTabId ] = useState('');
   const [ contactLink, setContactLink ] = useState('');
+  const [ contactText, setContactText ] = useState('');
 
   const tabs: ContactsTabProps[] = [
     {
-      id: 'tg', 
+      id: 'tg',
+      text:'@Kosta_LA', 
       link:'@Kosta_LA', 
       children: <TelegramIcon />
     },
     {
       id: 'mail', 
+      text:'KonstantinLA87@gmail.com', 
       link:'konstantinla87@gmail.com', 
       children: <MailIcon />
     },
     {
       id: 'linkedin', 
+      text:'www.LinkedIn.com', 
       link:'https://www.linkedin.com/in/konstantin-labzov/', 
       children: <LinkedinIcon />
     },
     {
       id: 'hh', 
+      text:'www.HeadHunter.com', 
       link:'https://dev.hh.ru/articles/logos', 
       children: <HhIcon />
     },
   ]
 
-  const handleTabClick = (id: string, link: string) => {
+  const handleTabClick = (id: string, link: string, text: string) => {
     setselectedTabId('');
     setTimeout(() => {
       setselectedTabId(id);
     }, 100)
     setContactLink(link);
+    setContactText(text);
   }
 
   return (
-    <Page className={classNames('ContactsPage', {}, [className])}>
+    <Page className={classNames('ContactsPage', {'padding-top': !selectedTabId}, [className])}>
       <div className="container">
-        <h1>Contact<span>s</span></h1>
+        <h1>{t('title-1')}<span>{t('title-2')}</span></h1>
         <ContactsTabs
           tabs={tabs} 
           selectedId={selectedTabId} 
@@ -63,7 +69,7 @@ const ContactsPage: FC<ContactsPageProps> = ({className}) => {
         />
         {selectedTabId && (
           <span className="contacts__link">
-            <>{contactLink}</>
+            <>{contactText}</>
             <CopyButton text={contactLink} />
             {(selectedTabId === 'linkedin' || selectedTabId === 'hh') && (
               <LinkButton link={contactLink} />

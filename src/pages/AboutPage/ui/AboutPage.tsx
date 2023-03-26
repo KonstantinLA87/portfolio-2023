@@ -1,10 +1,11 @@
 import './AboutPage.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { HistoryItem } from '../../../shared/ui/HistoryItem/HistoryItem';
-import { TabItem } from 'shared/ui/TabItem/TabItem';
+import { TabItem, TabItemProps } from 'shared/ui/TabItem/TabItem';
 import { Page } from 'shared/ui/Page/Page';
+import { Tabs } from 'entities/Tabs';
 
 interface AboutPageProps {
   className?: string;
@@ -12,58 +13,86 @@ interface AboutPageProps {
 
 const AboutPage: FC<AboutPageProps> = ({className}) => {
   const {t} = useTranslation('about');
+  const [selectedTabId, setselectedTabId] = useState('');
+
+  const tabs: TabItemProps[] = [
+    {
+      id: 'main',
+      text:'Main info', 
+    },
+    {
+      id: 'chronology', 
+      text:'Chronology', 
+    }
+  ]
+
+  const handleTabClick = (id: string) => {
+    setselectedTabId(id);
+  }
 
   return (
-    <Page className={classNames('AboutPage', {}, [className])}>
+    <Page className={classNames('AboutPage', {'padding-top': !selectedTabId}, [className])}>
       <div className="container">
         <div className="about__gradient"></div>
         <h1>{t('About')} <span>{t('me')}</span></h1>
-        <div className="tabs__wrap">
-          <TabItem text={t('chronology')} className="active" />
-          <TabItem text="Общая информация" />
-        </div>
 
-        <div className="history__wrap">
-          <h4>Web-design</h4>
-          <HistoryItem 
-            date="2010" 
-            paragraph='В 2010 году закончил Санкт-Петербургский Университет Технологии и Дизайна (СПБГУТиД) по специальности “Графический Дизайнер”' 
-          />
-          <HistoryItem 
-            date="2012" 
-            paragraph='В 2012 году решил переквалифицироваться в web-дизайнера, почти сразу же изучил верстку HTML/CSS. Устроился на свою первую работу как web-дизайнер. После 3 года занимался фрилансом на freelance.ru' 
-          />
-          <HistoryItem 
-            date="2015" 
-            paragraph='Летом 2015 устроился в известную IT-компанию SEMrush в отдел платного траффика (PPC). В мои основные задачи входило создание дизайн-макетов для лендингов, их верстка, подключение форм регистрации и обслуживание данных лендингов на сервере. В компании я проработал почти ровно 4 года' 
-          />
-          <HistoryItem 
-            date="2019" 
-            paragraph='С конца 2019 по лето 2022 работал в эстонской компании Crezu на аутсорсе так же в должности web-дизайнера' 
-          />
-          <HistoryItem 
-            date="2022" 
-            paragraph='В августе 2022 устроился в Quadcode где проработал всего три месяца' 
-            noline
-          />
-          <h4 className="pink">Frontend Development</h4>
-          <HistoryItem 
-            date="2022" 
-            paragraph='В конце ноября 2022 решил сменить род деятельности и стал усиленно изучать frontend-технологии' 
-            pink
-          />
-          <HistoryItem 
-            date="2022" 
-            paragraph='В конце ноября 2022 решил сменить род деятельности и стал усиленно изучать frontend-технологии' 
-            pink
-          />
-          <HistoryItem 
-            date="2022" 
-            paragraph='В конце ноября 2022 решил сменить род деятельности и стал усиленно изучать frontend-технологии' 
-            noline
-            pink
-          />
-        </div>
+        <Tabs 
+          className="tabs__wrap" 
+          tabs={tabs} 
+          selectedId={selectedTabId} 
+          onClick={handleTabClick} 
+        />
+
+        {selectedTabId === 'chronology' && (    
+          <div className="tab-content history__wrap">
+            <h4>{t('Web-design')}</h4>
+            <HistoryItem 
+              date="2010" 
+              paragraph={t('history_2010')} 
+            />
+            <HistoryItem 
+              date="2012" 
+              paragraph={t('history_2012')} 
+            />
+            <HistoryItem 
+              date="2015" 
+              paragraph={t('history_2015')} 
+            />
+            <HistoryItem 
+              date="2019" 
+              paragraph={t('history_2019')} 
+            />
+            <HistoryItem 
+              date="2022" 
+              paragraph={t('history_2022')} 
+              noline
+            />
+            <h4 className="pink">{t('Frontend Development')}</h4>
+            <HistoryItem 
+              date={`2022 ${t('November')}`}
+              paragraph={t('history_2022nov')} 
+              pink
+            />
+            <HistoryItem 
+              date={`2023 ${t('January')}`}
+              paragraph={t('history_2023jan')} 
+              pink
+            />
+            <HistoryItem 
+              date={`2023 ${t('February')}`}
+              paragraph={t('history_2023feb')} 
+              pink
+            />
+            <HistoryItem 
+              date={`2023 ${t('March')}`}
+              paragraph={t('history_2023mar')} 
+              noline
+              pink
+            />
+          </div>
+          )
+        }
+        
       </div>
     </Page>
   );

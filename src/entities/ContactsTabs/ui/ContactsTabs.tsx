@@ -7,7 +7,7 @@ interface ContactsTabsProps {
   className?: string;
   tabs: ContactsTabProps[];
   selectedId: string;
-  onClick: (id: string, link: string) => void;
+  onClick: (id: string, link: string, text: string) => void;
   children?: ReactNode;
 }
 
@@ -28,10 +28,11 @@ export const ContactsTabs: FC<ContactsTabsProps> = memo((props) => {
         <ContactsTab 
           key={tab.id}
           id={tab.id}
+          text={tab.text}
           link={tab.link}
           className={classNames('', {'active': tab.id === selectedId})}
           // @ts-ignore
-          onClick={() => onClick(tab.id, tab.link)}
+          onClick={() => onClick(tab.id, tab.link, tab.text)}
         >
           {tab.children}
         </ContactsTab>

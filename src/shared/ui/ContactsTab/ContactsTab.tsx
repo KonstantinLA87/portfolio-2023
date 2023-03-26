@@ -7,6 +7,7 @@ export interface ContactsTabProps extends ButtonHTMLAttributes<HTMLButtonElement
   className?: string;
   id?: string;
   link: string;
+  text: string;
 }
 
 export const ContactsTab = memo((props: ContactsTabProps) => {
