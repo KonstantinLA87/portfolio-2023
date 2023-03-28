@@ -14,7 +14,7 @@ export const InfoItem = memo((props: InfoItemProps) => {
   return (
     <div className="skills__info-item">
       <div className="skills-title__wrap">
-        <LangIcon className='test_icon' />
+        {/* <LangIcon className='test_icon' /> */}
         <h4>{title}</h4>
       </div>
       <div className="skills__info-icons">

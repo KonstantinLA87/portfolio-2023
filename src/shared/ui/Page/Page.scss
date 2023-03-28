@@ -2,6 +2,14 @@
   padding-top: 130px;
   animation: fadeIn 1s forwards;
   min-height: 100vh;
+
+  @media (max-width: 560px) {
+    padding-top: 100px;
+  }
+
+  @media (max-width: 460px) {
+    padding-top: 70px;
+  }
 }
 @keyframes fadeIn {
   from {opacity: 0}

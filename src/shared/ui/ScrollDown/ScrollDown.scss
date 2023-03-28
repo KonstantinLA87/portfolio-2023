@@ -1,0 +1,42 @@
+.ScrollDown {
+  width: 60px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  border: 3px solid var(--primary-color-20);
+  border-radius: 30px;
+
+  svg {
+    position: relative;
+    top: 10px;
+    animation: arrowMove 1.4s infinite;
+    width: 22px;
+  }
+
+  @media (max-width: 560px) {
+    width: 40px;
+    height: 60px;
+    border-width: 2px;
+
+    svg {
+      top: 0px;
+      width: 14px;
+    }
+  }
+}
+
+@keyframes arrowMove {
+  0% {
+    transform: translateY(0);
+    opacity: .3;
+  }
+  70% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: .3;
+  }
+}

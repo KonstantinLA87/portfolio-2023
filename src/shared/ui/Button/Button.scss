@@ -22,4 +22,8 @@
   border-radius: 0;
   background: transparent;
   border: none;
+
+  svg, img {
+    vertical-align: bottom;
+  }
 }

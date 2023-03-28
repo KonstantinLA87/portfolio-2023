@@ -7,6 +7,83 @@
   font-size: 32px;
   font-weight: 400;
   color: #2A4767;
-  // color: var(--secondary-color);
   margin-bottom: 5px;
+
+  @media (max-width: 760px) {
+    font-size: 28px;
+  }
+
+  @media (max-width: 560px) {
+    font-size: 24px;
+  }
+}
+
+.main__fullpage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.main__player-wrap {
+  animation: moveUp .5s forwards;
+  animation-delay: 4s;
+}
+@keyframes moveUp {
+  from {transform: translateY(0)}
+  to {transform: translateY(-100px)}
+}
+
+.main__scrollDown {
+  bottom: 30px;
+  animation: scrollFadeIn .5s forwards;
+  animation-delay: 4s;
+  opacity: 0;
+}
+
+@keyframes scrollFadeIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.main__benefits-title {
+  display: flex;
+  align-items: center;
+  grid-gap: 25px;
+  margin-bottom: 50px;
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.main__benefits-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  grid-gap: 60px;
+  
+  @media (max-width: 1100px) {
+    grid-gap: 40px;
+  }
+  @media (max-width: 760px) {
+    max-width: 400px;
+  }
+}
+
+.PlateItem.main__benefits-item {
+  @media (max-width: 1100px) {
+    max-width: 48%;
+  }
+  @media (max-width: 760px) {
+    max-width: 400px;
+  }
 }

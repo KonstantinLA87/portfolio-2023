@@ -1,5 +1,4 @@
 .LinkButton {
-  margin-left: 10px;
   width: 40px;
   height: 40px;
   display: flex;
@@ -10,10 +9,19 @@
   background: transparent;
   cursor: pointer;
   position: relative;
-  top: -2px;
   transition: .2s;
 
   &:hover {
     background: #0A1826;
+  }
+
+  @media (max-width: 760px) {
+    width: 34px;
+    height: 34px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
   }
 }

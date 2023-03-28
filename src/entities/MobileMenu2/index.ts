@@ -1,0 +1,1 @@
+export { MobileMenu2 } from './ui/MobileMenu2';

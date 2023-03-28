@@ -3,7 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { HistoryItem } from '../../../shared/ui/HistoryItem/HistoryItem';
-import { TabItem, TabItemProps } from 'shared/ui/TabItem/TabItem';
+import { TabItemProps } from 'shared/ui/TabItem/TabItem';
 import { Page } from 'shared/ui/Page/Page';
 import { Tabs } from 'entities/Tabs';
 
@@ -18,7 +18,7 @@ const AboutPage: FC<AboutPageProps> = ({className}) => {
   const tabs: TabItemProps[] = [
     {
       id: 'main',
-      text:'Main info', 
+      text:'Main info',
     },
     {
       id: 'chronology', 
@@ -44,7 +44,7 @@ const AboutPage: FC<AboutPageProps> = ({className}) => {
         />
 
         {selectedTabId === 'chronology' && (    
-          <div className="tab-content history__wrap">
+          <div className="tab-content about__chronology-wrap">
             <h4>{t('Web-design')}</h4>
             <HistoryItem 
               date="2010" 
@@ -92,7 +92,21 @@ const AboutPage: FC<AboutPageProps> = ({className}) => {
           </div>
           )
         }
-        
+        {selectedTabId === 'main' && (
+          <div className="tab-content about__main-wrap">
+            <div className='about__main-text'>
+              <p>{t('main_1')}</p>
+              <p>{t('main_2')}</p>
+              <p>{t('main_3')}</p>
+              <p>{t('main_4')}</p>
+              <p>{t('main_5')}</p>
+              <p>{t('main_6')}</p>
+            </div>
+            <div className='about__main-img'>
+              <img src="./images/me.jpg" alt="" />
+            </div>
+          </div>
+        )}
       </div>
     </Page>
   );

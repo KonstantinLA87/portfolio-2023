@@ -1,5 +1,4 @@
 .CopyButton {
-  margin-left: 20px;
   width: 40px;
   height: 40px;
   display: flex;
@@ -10,7 +9,6 @@
   background: transparent;
   cursor: pointer;
   position: relative;
-  top: -2px;
   transition: .2s;
 
   &:hover {
@@ -18,7 +16,6 @@
   }
 
   &.copied {
-    display: block;
     border-color: var(--green-color-50);
     background: var(--green-color-10);
 
@@ -28,6 +25,16 @@
 
     .CopyButton__tooltip {
       display: block;
+    }
+  }
+
+  @media (max-width: 760px) {
+    width: 34px;
+    height: 34px;
+
+    svg {
+      width: 16px;
+      height: 16px;
     }
   }
 }
@@ -53,6 +60,34 @@
     left: -14px;
     top: 10px;
   }
+
+  @media (max-width: 760px) {
+    top: 3px;
+    font-size: 12px;
+    padding: 6px;
+    border-width: 5px;
+    left: 44px;
+    
+    &:before {
+      top: 7px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    top: 44px;
+    font-size: 12px;
+    padding: 6px;
+    border-width: 5px;
+    left: -20px;
+    animation: fadeInUp .2s;
+    
+    &:before {
+      border-right-color: transparent;
+      border-bottom-color: var(--green-color);
+      top: -12px;
+      left: 28px;
+    }
+  }
 }
 
 @keyframes fadeInLeft {
@@ -62,6 +97,17 @@
   }
   to { 
     transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from { 
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateY(0px);
     opacity: 1;
   }
 }

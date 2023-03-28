@@ -1,0 +1,33 @@
+.BestChoiceIcon {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation: bestChoiceScale 3s infinite ease-in-out;
+
+  svg path {
+    fill: var(--secondary-color);
+  }
+}
+@keyframes bestChoiceScale {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
+
+.BestChoice__round {
+  width: 100%;
+  height: 100%;
+  animation: bestChoiceSpin 20s infinite linear;
+}
+@keyframes bestChoiceSpin {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+.BestChoice__crown {
+  position: absolute;
+  width: 40%;
+  height: 44%;
+  left: 30%;
+  top: 28%;
+}

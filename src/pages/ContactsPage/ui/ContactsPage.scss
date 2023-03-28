@@ -6,6 +6,17 @@
   &.padding-top {
     padding-top: 270px;
   }
+
+  @media (max-width: 960px) {
+    &.padding-top {
+      padding-top: 250px;
+    }
+  }
+  @media (max-width: 560px) {
+    &.padding-top {
+      padding-top: 200px;
+    }
+  }
 }
 
 .contacts__link {
@@ -16,8 +27,48 @@
   color: #fff;
   margin-top: 100px;
   animation: fadeIn 1s forwards;
+
+  @media (max-width: 960px) {
+    margin-top: 80px;
+  }
+
+  @media (max-width: 760px) {
+    font-size: 22px;
+  }
+  
+  @media (max-width: 560px) {
+    margin-top: 60px;
+    font-size: 17px;
+  }
+
 }
 @keyframes fadeIn {
   from {opacity: 0}
   to {opacity: 1}
+}
+
+.contacts__copyButton {
+  margin-left: 20px;
+  top: -2px;
+  
+  @media (max-width: 760px) {
+    top: -3px;
+  }
+
+  @media (max-width: 560px) {
+    top: -6px;
+  }
+}
+
+.contacts__linkButton {
+  margin-left: 10px;
+  top: -2px;
+
+  @media (max-width: 760px) {
+    top: -3px;
+  }
+
+  @media (max-width: 560px) {
+    top: -6px;
+  }
 }

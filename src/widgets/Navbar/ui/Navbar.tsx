@@ -1,11 +1,14 @@
-import './Navbar.css'
+import './Navbar.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { NavbarLink } from 'shared/ui/NavbarLink/NavbarLink';
 import { LinkLogo } from 'shared/ui/LinkLogo/LinkLogo';
 import { useTranslation } from 'react-i18next';
+import { ReactComponent as MenuIcon } from 'shared/assets/img/i-menu.svg'
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { MobileMenu } from 'entities/MobileMenu';
 
 interface NavbarProps {
   className?: string;
@@ -13,6 +16,15 @@ interface NavbarProps {
 
 export const Navbar: FC<NavbarProps> = ({className}) => {
   const { t } = useTranslation();
+  const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
+
+  const onOpenMobileMenu = () => {
+    setMobileMenuOpened(true);
+  }
+
+  const onCloseMobileMenu = (value: boolean) => {
+    setMobileMenuOpened(value);
+  }
   
   return (
     <header className={classNames('Navbar', {}, [className])}>
@@ -28,6 +40,18 @@ export const Navbar: FC<NavbarProps> = ({className}) => {
         <LangSwitcher />
         <ThemeSwitcher />
       </div>
+      <Button 
+        className="navbar__menu"
+        theme={ButtonTheme.CLEAN}
+        onClick={onOpenMobileMenu}
+      >
+        <MenuIcon />
+      </Button>
+      <MobileMenu 
+        className={classNames('', {'active': mobileMenuOpened})} 
+        //@ts-ignore
+        handlerOnCloseMobileMenu={onCloseMobileMenu}
+      />
     </header>
   );
 };

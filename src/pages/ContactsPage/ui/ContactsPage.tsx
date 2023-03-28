@@ -43,17 +43,14 @@ const ContactsPage: FC<ContactsPageProps> = ({className}) => {
     },
     {
       id: 'hh', 
-      text:'www.HeadHunter.com', 
+      text:'www.HeadHunter.ru', 
       link:'https://dev.hh.ru/articles/logos', 
       children: <HhIcon />
     },
   ]
 
   const handleTabClick = (id: string, link: string, text: string) => {
-    setselectedTabId('');
-    setTimeout(() => {
-      setselectedTabId(id);
-    }, 100)
+    setselectedTabId(id);
     setContactLink(link);
     setContactText(text);
   }
@@ -68,13 +65,19 @@ const ContactsPage: FC<ContactsPageProps> = ({className}) => {
           onClick={handleTabClick} 
         />
         {selectedTabId && (
-          <span className="contacts__link">
-            <>{contactText}</>
-            <CopyButton text={contactLink} />
+          <div className="contacts__link">
+            <span>{contactText}</span>
+            <CopyButton 
+              text={contactLink}
+              className="contacts__copyButton"
+            />
             {(selectedTabId === 'linkedin' || selectedTabId === 'hh') && (
-              <LinkButton link={contactLink} />
+              <LinkButton 
+                link={contactLink}
+                className="contacts__linkButton"
+              />
             )}
-          </span>
+          </div>
         )}
       </div>
     </Page>
