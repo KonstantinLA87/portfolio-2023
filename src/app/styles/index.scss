@@ -6,13 +6,14 @@
 body {
   font-family: Inter, 'Open Sans';
   font-weight: 300;
+  color: var(--inverted-color);
 }
 
 ::-webkit-scrollbar {
   width: 0;
 }
 
-.App {
+.app {
   min-height: 100vh;
   background: var(--bg-color);
 }
@@ -22,6 +23,10 @@ body {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 30px;
+
+  &.flex1 {
+    flex: 1;
+  }
 
   @media (max-width: 560px) {
     padding: 0 20px;
@@ -38,10 +43,22 @@ ul {
       position: absolute;
       left: 0;
       top: 13px;
-      background: #fff;
+      background: var(--inverted-color);
       width: 5px;
       height: 5px;
       border-radius: 50%;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    li:before {
+      top: 11px;
+    }
+  }
+
+  @media (max-width: 460px) {
+    li:before {
+      top: 10px;
     }
   }
 }
@@ -54,6 +71,7 @@ h1 {
   text-transform: uppercase;
   font-size: 100px;
   font-weight: 900;
+  color: var(--inverted-color);
 
   @media (max-width: 1100px) {
     font-size: 80px;
@@ -75,23 +93,35 @@ h2 {
   text-transform: uppercase;
   font-weight: 900;
   margin-bottom: 50px;
+  line-height: 1;
   
   @media (max-width: 1100px) {
-    font-size: 40px;
+    font-size: 50px;
     margin-bottom: 35px;
   }
 
   @media (max-width: 760px) {
-    font-size: 30px;
+    font-size: 40px;
     margin-bottom: 25px;
+  }
+
+  @media (max-width: 560px) {
+    font-size: 35px;
   }
 }
 
 h3 {
   font-size: 30px;
+  line-height: 1.2;
   text-transform: uppercase;
   font-weight: 900;
   margin-bottom: 20px;
+  margin-bottom: .6em;
+
+  @media (max-width: 1100px) {
+    font-size: 24px;
+    // margin-bottom: 15px;
+  }
 }
 
 h4 {

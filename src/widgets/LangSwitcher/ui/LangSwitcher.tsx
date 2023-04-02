@@ -7,7 +7,7 @@ interface LangSwitcherProps {
   className?: string
 }
 
-export const LangSwitcher: FC<LangSwitcherProps> = memo(({ className }) => {
+export const LangSwitcher: FC = memo(({ className }: LangSwitcherProps) => {
   const { i18n } = useTranslation();
 
   const toggleLang = () => {

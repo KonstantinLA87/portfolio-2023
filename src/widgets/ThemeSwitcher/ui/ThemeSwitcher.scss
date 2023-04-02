@@ -2,10 +2,11 @@
   cursor: pointer;
   padding: 5px 7px;
   border-radius: 60px;
-  border: none;
-  background: #0F2235;
+  border: 1px solid var(--theme-border-color);
+  background: var(--theme-bg);
   display: flex;
   align-items: center;
+  transition: .2s;
 
   > div {
     border-radius: 50%;
@@ -22,7 +23,8 @@
   }
 
   &:hover {
-    background: #12293f;
+    background: var(--theme-bg-hover);
+    box-shadow: var(--theme-shadow);
   }
 }
 

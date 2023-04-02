@@ -1,22 +1,52 @@
 .app_dark_theme {
+  --primary-color: #00C2FF;
+  --primary-color-10: rgb(0, 194, 255, .1);
+  --primary-color-20: rgb(0, 194, 255, .2);
+  --primary-color-50: rgb(0, 194, 255, .5);
+  --secondary-color: #EC5AF7;
+  --secondary-color-10: rgb(236, 90, 247, .1);
+  --secondary-color-50: rgb(236, 90, 247, .5);
+  --green-color: #00FF66;
+  --green-color-10: rgb(0, 255, 102, .1);
+  --green-color-50: rgb(0, 255, 102, .5);
+
+  --inverted-color: rgb(255, 255, 255);
+  --inverted-color-10: rgba(255, 255, 255, .1);
+  --inverted-color-05: rgba(255, 255, 255, .05);
+
+  --bg-selected: #0e1f30;
+  --bg-selected-0: rgba(14, 31, 48, .1);
+  --bg-selected-hover: #11263b;
+
+  --navbarLink-hover-bg: #04090f;
+  --navbarLink-hover-color: var(--primary-color);
+
   --bg-color: #060d14;
   --bg-color-90: rgb(6, 13, 20, .9);
   --bg-color-80: rgb(6, 13, 20, .8);
   --bg-color-0: rgb(6, 13, 20, 0);
-  color: #fff;
-}
 
+  --logo-color: #fff;
+  --logo-color-2: var(--primary-color);
 
-.dark-path {
-  fill: var(--primary-color);
-}
+  --plate-gradient: linear-gradient(135deg, var(--bg-selected), var(--bg-selected-0) 85%);
+  --plate-gradient-inverted: linear-gradient(-135deg, var(--bg-selected), var(--bg-selected-0) 85%);
+  --plate-border-color: none;
+  --plate-shadow: 0 6px 20px rgb(0 0 0 / 31%);
+  
+  // theme-switcher
+  --theme-border-color: transparent;
+  --theme-bg: var(--bg-selected);
+  --theme-bg-hover: #11263b;
+  --theme-shadow: 0 4px 10px rgb(0 0 0 / 31%);
 
-.light-circle, .light-line {
-  opacity: .5;
-  fill: transparent;
-  stroke: var(--primary-color);
-}
-
-h1 {
-  color: #fff;
+  .dark-path {
+    fill: var(--primary-color);
+  }
+  
+  .light-circle, .light-line {
+    opacity: .5;
+    fill: transparent;
+    stroke: var(--primary-color);
+  }
 }

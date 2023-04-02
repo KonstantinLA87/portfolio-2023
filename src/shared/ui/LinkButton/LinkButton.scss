@@ -12,7 +12,7 @@
   transition: .2s;
 
   &:hover {
-    background: #0A1826;
+    background: var(--bg-selected);
   }
 
   @media (max-width: 760px) {

@@ -1,15 +1,16 @@
 import './SkillsPage.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SkillsItem } from 'widgets/SkillsItem/ui/SkillsItem';
 import { Page } from 'shared/ui/Page/Page';
+import { Footer } from 'shared/ui/Footer/Footer';
 
 interface SkillsPageProps {
   className?: string;
 }
 
-const SkillsPage: FC<SkillsPageProps> = ({className}) => {
+const SkillsPage: FC = memo(({className}: SkillsPageProps) => {
   const { t } = useTranslation();
 
   return (
@@ -19,23 +20,23 @@ const SkillsPage: FC<SkillsPageProps> = ({className}) => {
           <SkillsItem 
             specification="design"
             text={[
-              'Работа в 2х крупных IT-компаниях Петербурга (SEMrush, Quadcode)',
-              'Разработка дизайн-макетов + верстка HTML, CSS/SCSS, JS... ',
-              'С Figma на Ты. Auto-лэйауты, компоненты, разработка UI-китов и т.д.',
+              'dn_item_list_1',
+              'dn_item_list_2',
+              'dn_item_list_3',
             ]}
           />
           <SkillsItem 
             className="inverted" 
             specification="frontend" 
             text={[
-              'Обучение Javascript, React + Typescript + Redux и т.д. по 8 часов в день,',
-              'практический без выходных в течении полугода',
+              'fe_item_list_1',
             ]}
           />
         </div>
       </div>
+      <Footer />
     </Page>
   );
-};
+});
 
 export default SkillsPage;

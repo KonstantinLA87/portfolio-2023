@@ -1,19 +1,19 @@
 import './LinkLogo.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { NavLink } from 'react-router-dom';
-import { ReactComponent as LogoDark } from 'shared/assets/img/logo_dark.svg';
+import { NavLink, NavLinkProps } from 'react-router-dom';
+import { ReactComponent as Logo } from 'shared/assets/img/logo.svg';
 
-interface LinkLogoProps {
+interface LinkLogoProps extends NavLinkProps {
   className?: string;
 }
 
-export const LinkLogo: FC<LinkLogoProps> = ({className}) => {
-  const {t} = useTranslation();
+export const LinkLogo = memo(({className, to}: LinkLogoProps) => {
+  const { t } = useTranslation();
   return (
-    <NavLink className={classNames('LinkLogo', {}, [className])} to={'/'}>
-      <LogoDark />
+    <NavLink to={to} className={classNames('LinkLogo', {}, [className])}>
+      <Logo />
     </NavLink>
   );
-};
+});

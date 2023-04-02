@@ -5,5 +5,58 @@
   "of web design": "of web design",
   "hardcore learning": "hardcore learning",
   "frontend": "frontend",
-  "for 6 month": "for 6 month"
+  "for 6 month": "for 6 month",
+
+  "dn_item_list_1": "Worked in 2 large IT companies in St. Petersburg (SEMrush, Quadcode)",
+  "dn_item_list_2": "Development of design layouts + HTML, CSS/SCSS, JS layout",
+  "dn_item_list_3": "From Figma to You. Auto layouts, components, UI kit development, etc.",
+
+  "fe_item_list_1": "Learning Javascript, React + Typescript + Redux and more. The average operating time is 8 hours a day, practically seven days a week for six months",
+
+  "dn_adobe_title": "Adobe Suite",
+  "dn_adobe_1": "Working with raster images, retouching",
+  "dn_adobe_2": "Vector graphics, icon rendering, etc.",
+  "dn_adobe_3": "SVG animation, lottie-files, bodymovin...",
+
+  "dn_figma_title": "Figma",
+  "dn_figma_1": "More than 3 years experience in Figma",
+  "dn_figma_2": "Creating layouts, their adaptability, states",
+  "dn_figma_3": "Auto-layouts, components, development of full-fledged UI kits",
+
+  "dn_layout_title": "Layout",
+  "dn_layout_1": "Responsive layouts, mobile-first",
+  "dn_layout_2": "Compliance with modern principles of semantics",
+  "dn_layout_3": "SASS Preprocessors and Using CSS Variables",
+
+  "fe_langs_title": "Programming languages",
+  "fe_langs_1": "Javascript - basic principles, array methods, advanced principles of using native JS without React",
+  "fe_langs_2": "TypeScript - interfaces, types, enums, typing everything that is possible (in the process of learning and understanding)",
+  "fe_langs_3": "Codewars - 6 kyu (I don't practice much, I reached 6 kyu in a couple of days)",
+  
+  "fe_libs_title": "Frameworks / Libraries",
+  "fe_libs_1": "Started learning React 2 weeks after I started learning JS",
+  "fe_libs_2": "Components, routing, Redux state manager and Redux-toolkit...",
+  
+  "fe_test_title": "Tests / Control",
+  "fe_test_1": "Writing unit tests using Jest (under study)",
+  "fe_test_2": "Maintaining a storybook for visual control of components. Decorators",
+  "fe_test_3": "Worked a bit with Loki for screenshot control",
+  
+  "fe_build_title": "Module bundler",
+  "fe_build_1": "Building webpack for React app from scratch",
+  "fe_build_2": "Setting up and understanding basic plugins, linters, Babel, etc.",
+  
+  "fe_dist_title": "Distributors",
+  "fe_dist_1": "Working with Git (I didn’t deepen much, but I have a basic understanding)",
+  "fe_dist_2": "Working with git-actions, CI-pipeline, to automate different types of checks",
+
+  "fe_lint_title": "Linters",
+  "fe_lint_1": "Setting up linters from scratch and adjusting their behavior for yourself",
+  
+  "fe_translate_title": "Translators",
+  "fe_translate_1": "Working with i18next, actually this technology is used in my portfolio website project",
+
+  "fe_architect_title": "Architecture",
+  "fe_architect_1": "FSD architecture in the development of a large project",
+  "fe_architect_2": "Basic understanding of the FSD concept"
 }

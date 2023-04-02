@@ -1,6 +1,6 @@
 import './AppLink.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, LinkProps } from 'react-router-dom';
 
@@ -9,9 +9,9 @@ interface AppLinkProps extends LinkProps {
   children?: React.ReactNode;
 }
 
-export const AppLink = (props: AppLinkProps) => {
+export const AppLink = memo((props: AppLinkProps) => {
   const {className, children, to, onClick} = props;
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <Link 
@@ -22,4 +22,4 @@ export const AppLink = (props: AppLinkProps) => {
       { children }
     </Link>
   );
-};
+});

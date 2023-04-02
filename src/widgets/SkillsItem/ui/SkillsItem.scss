@@ -1,12 +1,15 @@
 .SkillsItem {
   padding: 45px;
-  background: linear-gradient(135deg, #0A1826, rgba(10, 24, 38, 0) 85%);
+  background: var(--plate-gradient);
   border-radius: 10px;
   position: relative;
   overflow: hidden;
+  border: 1px solid var(--plate-border-color);
+  box-shadow: var(--plate-shadow);
   
   > ul {
     font-size: 19px;
+    max-width: 680px;
     line-height: 1.6;
     margin-top: 25px;
     margin-bottom: 25px;
@@ -38,7 +41,10 @@
 
 .SkillsItem.inverted {
   text-align: right;
-  background: linear-gradient(-135deg, #0A1826, rgba(10, 24, 38, 0) 85%);
+  background: var(--plate-gradient-inverted);
+  > ul {
+    margin-left: auto;
+  }
   .skills__bg-img {
     right: auto;
     left: 0;
@@ -58,6 +64,7 @@
     border-color: var(--secondary-color-50);
     
     &:hover {
+      background: var(--secondary-color-10);
       border-color: var(--secondary-color);
     }
   }
@@ -197,7 +204,7 @@
   }
 
   @media (max-width: 560px) {
-    grid-gap: 5px;
+    grid-gap: 6px;
 
     &__left {
       span:first-child {
@@ -212,9 +219,11 @@
       p:first-child {
         font-size: 44px;
         margin-bottom: 0;
+        line-height: 1;
       }
       p:last-child {
         font-size: 44px;
+        line-height: 1;
       }
     }
   }
@@ -272,10 +281,12 @@
     
     p:first-child {
       font-size: 37px;
+      line-height: 1.1;
     }
   
     p:last-child {
       font-size: 44px;
+      line-height: 1.2;
     }
   }
 

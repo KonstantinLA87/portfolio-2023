@@ -1,6 +1,6 @@
 import './Navbar.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
-import { FC, useState } from 'react';
+import { FC, memo, useCallback, useState } from 'react';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { NavbarLink } from 'shared/ui/NavbarLink/NavbarLink';
@@ -14,22 +14,19 @@ interface NavbarProps {
   className?: string;
 }
 
-export const Navbar: FC<NavbarProps> = ({className}) => {
+export const Navbar: FC = memo(({className}: NavbarProps) => {
   const { t } = useTranslation();
-  const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
 
-  const onOpenMobileMenu = () => {
-    setMobileMenuOpened(true);
-  }
+  const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
-  const onCloseMobileMenu = (value: boolean) => {
-    setMobileMenuOpened(value);
-  }
+  const onToggleMobileMenu = useCallback(() => {
+    setOpenMobileMenu(prev => !prev);
+  }, []);
   
   return (
     <header className={classNames('Navbar', {}, [className])}>
       <div className="navbar__left">
-        <LinkLogo className="navbar__logo" />
+        <LinkLogo to='/' className="navbar__logo" />
         <nav>
           <NavbarLink name={t('My Skills')} to='/skills' />
           <NavbarLink name={t('About Me')} to='/about' />
@@ -39,19 +36,15 @@ export const Navbar: FC<NavbarProps> = ({className}) => {
       <div className="navbar__right">
         <LangSwitcher />
         <ThemeSwitcher />
+        <Button 
+          className="navbar__menu"
+          theme={ButtonTheme.CLEAN}
+          onClick={onToggleMobileMenu}
+        >
+          <MenuIcon />
+        </Button>
       </div>
-      <Button 
-        className="navbar__menu"
-        theme={ButtonTheme.CLEAN}
-        onClick={onOpenMobileMenu}
-      >
-        <MenuIcon />
-      </Button>
-      <MobileMenu 
-        className={classNames('', {'active': mobileMenuOpened})} 
-        //@ts-ignore
-        handlerOnCloseMobileMenu={onCloseMobileMenu}
-      />
+      <MobileMenu isOpen={openMobileMenu} onClose={onToggleMobileMenu} />
     </header>
   );
-};
+});

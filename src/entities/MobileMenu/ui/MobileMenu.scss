@@ -9,6 +9,7 @@
   padding: 20px;
   display: none;
   flex-direction: column;
+  z-index: 1000;
 
   &.active {
     animation: fadeInLeft .5s forwards;
@@ -23,7 +24,7 @@
   }
 
   .NavbarLink {
-    padding: 15px;
+    padding: 20px 15px;
     font-size: 19px;
   }
 }
@@ -43,5 +44,5 @@
   display: flex;
   justify-content: center;
   grid-gap: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }

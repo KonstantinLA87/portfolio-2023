@@ -13,7 +13,6 @@ export interface ContactsTabProps extends ButtonHTMLAttributes<HTMLButtonElement
 export const ContactsTab = memo((props: ContactsTabProps) => {
   const { className, children, id, onClick } = props;
 
-
   return (
     <button 
       className={classNames('ContactsTab', {}, [className])}

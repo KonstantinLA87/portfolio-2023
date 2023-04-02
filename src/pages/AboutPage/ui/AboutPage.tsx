@@ -1,17 +1,18 @@
 import './AboutPage.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
-import { FC, useState } from 'react';
+import { FC, memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { HistoryItem } from '../../../shared/ui/HistoryItem/HistoryItem';
 import { TabItemProps } from 'shared/ui/TabItem/TabItem';
 import { Page } from 'shared/ui/Page/Page';
 import { Tabs } from 'entities/Tabs';
+import { Footer } from 'shared/ui/Footer/Footer';
 
 interface AboutPageProps {
   className?: string;
 }
 
-const AboutPage: FC<AboutPageProps> = ({className}) => {
+const AboutPage: FC = memo(({className}: AboutPageProps) => {
   const {t} = useTranslation('about');
   const [selectedTabId, setselectedTabId] = useState('');
 
@@ -26,14 +27,13 @@ const AboutPage: FC<AboutPageProps> = ({className}) => {
     }
   ]
 
-  const handleTabClick = (id: string) => {
+  const handleTabClick = useCallback((id: string) => {
     setselectedTabId(id);
-  }
+  }, []);
 
   return (
     <Page className={classNames('AboutPage', {'padding-top': !selectedTabId}, [className])}>
-      <div className="container">
-        <div className="about__gradient"></div>
+      <div className="container flex1">
         <h1>{t('About')} <span>{t('me')}</span></h1>
 
         <Tabs 
@@ -108,8 +108,9 @@ const AboutPage: FC<AboutPageProps> = ({className}) => {
           </div>
         )}
       </div>
+      <Footer />
     </Page>
   );
-};
+});
 
 export default AboutPage;

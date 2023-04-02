@@ -7,7 +7,7 @@ interface ContactsTabsProps {
   className?: string;
   tabs: ContactsTabProps[];
   selectedId: string;
-  onClick: (id: string, link: string, text: string) => void;
+  onClick: (id: any, link: string, text: string) => void;
   children?: ReactNode;
 }
 
@@ -21,7 +21,6 @@ export const ContactsTabs: FC<ContactsTabsProps> = memo((props) => {
   } = props;
 
   return (
-    // @ts-ignore
     <div className={classNames('ContactsTabs', {}, [className])}>
       {children}
       {tabs.map(tab => (
@@ -31,7 +30,6 @@ export const ContactsTabs: FC<ContactsTabsProps> = memo((props) => {
           text={tab.text}
           link={tab.link}
           className={classNames('', {'active': tab.id === selectedId})}
-          // @ts-ignore
           onClick={() => onClick(tab.id, tab.link, tab.text)}
         >
           {tab.children}

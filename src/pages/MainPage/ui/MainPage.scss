@@ -2,6 +2,12 @@
   padding-top: 190px;
   padding-bottom: 40px;
 }
+.Page.MainPage {
+  @media (max-width: 960px) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
 
 .main__name {
   font-size: 32px;
@@ -24,15 +30,39 @@
   align-items: center;
   justify-content: center;
   position: relative;
+
+  .Footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 .main__player-wrap {
   animation: moveUp .5s forwards;
   animation-delay: 4s;
+
+  @media (max-width: 760px) {
+    animation: moveUpTablet .5s forwards;
+    animation-delay: 4s;
+  }
+
+  @media (max-width: 560px) {
+    animation: moveUpMobile .5s forwards;
+    animation-delay: 4s;
+  }
 }
 @keyframes moveUp {
   from {transform: translateY(0)}
   to {transform: translateY(-100px)}
+}
+@keyframes moveUpTablet {
+  from {transform: translateY(0)}
+  to {transform: translateY(-80px)}
+}
+@keyframes moveUpMobile {
+  from {transform: translateY(0)}
+  to {transform: translateY(-60px)}
 }
 
 .main__scrollDown {
@@ -55,12 +85,30 @@
 
 .main__benefits-title {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   grid-gap: 25px;
   margin-bottom: 50px;
 
   h2 {
     margin-bottom: 0;
+    flex: 1;
+  }
+
+  @media (max-width: 960px) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 760px) {
+    margin-bottom: 30px;
+    grid-gap: 20px;
+  }
+
+  @media (max-width: 460px) {
+    grid-gap: 10px;
+    h2 {
+      font-size: 30px;
+    }
   }
 }
 
@@ -69,21 +117,71 @@
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
-  grid-gap: 60px;
+  grid-gap: 40px;
   
   @media (max-width: 1100px) {
     grid-gap: 40px;
   }
-  @media (max-width: 760px) {
+  @media (max-width: 960px) {
+    align-items: stretch;
+    grid-gap: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  @media (max-width: 660px) {
+    grid-gap: 20px;
+    flex-direction: column;
     max-width: 400px;
   }
 }
 
 .PlateItem.main__benefits-item {
-  @media (max-width: 1100px) {
-    max-width: 48%;
+  padding-top: 10px;
+  max-width: 33%;
+  @media (max-width: 960px) {
+    min-width: 40%;
+    max-width: 100%;
   }
-  @media (max-width: 760px) {
-    max-width: 400px;
+  @media (max-width: 660px) {
+    width: 100%;
+  }
+}
+
+.mainPage__hero-screen {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.mainPage__benefits-screen {
+  padding-top: 60px;
+}
+
+
+// MAIN SVG
+.main__player-wrap {
+  svg > g {
+    > g:nth-of-type(1),
+    > g:nth-of-type(2)
+    {
+      path {
+        fill: var(--primary-color);
+      }
+    }
+    > g:nth-of-type(3)
+    {
+      path {
+        fill: var(--bg-selected);
+      }
+    }
+    > g:nth-of-type(4),
+    > g:nth-of-type(5)
+    {
+      path {
+        fill: var(--inverted-color);
+      }
+    }
   }
 }

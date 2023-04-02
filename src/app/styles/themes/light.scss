@@ -1,0 +1,111 @@
+.app_light_theme {
+  --primary-color: rgb(0, 153, 255);
+  --primary-color-10: rgb(0, 153, 255, .1);
+  --primary-color-20: rgb(0, 153, 255, .2);
+  --primary-color-50: rgb(0, 153, 255, .5);
+  --secondary-color: #EC5AF7;
+  --secondary-color-10: rgb(236, 90, 247, .1);
+  --secondary-color-50: rgb(236, 90, 247, .5);
+  --green-color: rgb(65, 228, 0);
+  --green-color-10: rgb(65, 228, 0, .1);
+  --green-color-50: rgb(65, 228, 0, .5);
+  
+  --inverted-color: rgb(23, 43, 66);
+  --inverted-color-10: rgba(23, 43, 66, .1);
+  --inverted-color-05: rgba(23, 43, 66, .05);
+
+  --bg-selected: rgb(224, 240, 247);
+  --bg-selected-0: rgba(224, 240, 247, 0.5);
+
+  --navbarLink-hover-bg: var(--bg-selected);
+  --navbarLink-hover-color: var(--inverted-color);
+
+  --bg-color: rgb(245, 250, 252);
+  --bg-color-90: rgba(245, 250, 252, 0.9);
+  --bg-color-80: rgba(245, 250, 252, 0.8);
+  --bg-color-0: rgba(245, 250, 252, 0);
+
+  --logo-color: var(--primary-color);
+  --logo-color-2: var(--inverted-color);
+
+  --plate-gradient: linear-gradient(135deg, var(--bg-selected), var(--bg-selected-0) 85%);
+  --plate-gradient-inverted: linear-gradient(-135deg, var(--bg-selected), var(--bg-selected-0) 85%);
+  --plate-border-color: #005a9712;
+  --plate-shadow: 0 6px 20px rgb(0 99 144 / 11%);
+
+  // theme-switcher
+  --theme-border-color: #BEE4FD;
+  --theme-bg: transparent;
+  --theme-bg-hover: #fff;
+  --theme-shadow: 0 4px 10px rgb(0 99 144 / 11%);
+
+  .dark-path {
+    fill: transparent;
+    stroke: var(--primary-color);
+    opacity: .5;
+  }
+  
+  .light-circle, .light-line {
+    opacity: 1;
+    fill: var(--primary-color);
+    stroke: var(--primary-color);
+  }
+
+  // lang-switcher
+  .lang_text {
+    .active {
+      color: var(--primary-color);
+    }
+  }
+}
+
+
+
+
+
+
+// .app_light_theme {
+//   --primary-color: #00C2FF;
+//   --primary-color-10: rgb(0, 194, 255, .1);
+//   --primary-color-20: rgb(0, 194, 255, .2);
+//   --primary-color-50: rgb(0, 194, 255, .5);
+//   --secondary-color: #e5ff00;
+//   --secondary-color-50: rgb(236, 90, 247, .5);
+//   --green-color: #00FF66;
+//   --green-color-10: rgb(0, 255, 102, .1);
+//   --green-color-50: rgb(0, 255, 102, .5);
+
+//     --inverted-color: #fff;
+//   --inverted-color-10: rgba(0, 0, 0, 0.1);
+  
+//   --bg-color: #0080ff;
+//   --bg-color-90: rgba(0, 128, 255, 0.9);
+//   --bg-color-80: rgba(0, 128, 255, 0.8);
+//   --bg-color-0: rgba(0, 128, 255, 0);
+  
+//   --bg-selected: rgb(182 0 223);
+//   --bg-selected-0: rgba(20, 0, 255, .3);
+
+//   --logo-color: #fff;
+//   --logo-color-2: var(--secondary-color);
+
+//   --plate-gradient: linear-gradient(135deg, var(--bg-selected), var(--bg-selected-0) 85%);
+//   --plate-gradient-inverted: linear-gradient(-135deg, var(--bg-selected), var(--bg-selected-0) 85%);
+
+//   color: var(--inverted-color);
+
+//   .dark-path {
+//     fill: var(--primary-color);
+//   }
+  
+//   .light-circle, .light-line {
+//     opacity: 1;
+//     fill: var(--secondary-color);
+//     stroke: var(--secondary-color);
+//   }
+// }
+
+
+// h1 {
+//   color: #fff;
+// }

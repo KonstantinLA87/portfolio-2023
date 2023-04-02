@@ -1,0 +1,121 @@
+.Tooltip {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: right;
+  transform: translateX(400px);
+  
+  animation: fadeInTooltip .5s ease-out forwards;
+  animation-delay: 10s;
+  opacity: 0;
+}
+
+@keyframes fadeInTooltip {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.tooltip__close {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  background: var(--bg-selected);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: .2s;
+
+  &:before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 12px;
+    background: var(--inverted-color);
+    position: absolute;
+    left: 7px;
+    top: 12px;
+    transform: rotate(45deg);
+  }
+  
+  &:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 12px;
+    background: var(--inverted-color);
+    position: absolute;
+    left: 7px;
+    top: 12px;
+    transform: rotate(-45deg);
+  }
+
+
+  &:hover {
+    background: var(--bg-selected-hover);
+  }
+}
+
+.tooltip__wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  color: var(--inverted-color);
+  text-decoration: none;
+  font-size: 15px;
+  background: var(--bg-selected);
+  padding: 10px 15px 10px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--plate-border-color);
+  box-shadow: var(--plate-shadow);
+  transition: .2s;
+
+  > svg {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    
+    path {
+      fill: var(--inverted-color);
+    }
+  }
+
+  &:hover {
+    background: var(--bg-selected-hover);
+  }
+}
+
+.tooltip__content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  
+  p {
+    margin-right: 10px;
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.tooltip__hide {
+  animation: fadeOutTooltip .5s forwards;
+}
+
+@keyframes fadeOutTooltip {
+  from {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+}

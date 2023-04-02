@@ -1,11 +1,11 @@
 import './SkillsItem.scss'
 import { classNames } from 'shared/lib/classNames/classNames';
-import { FC, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ReactComponent as SkillsImg1 } from 'shared/assets/img/skills-img_1.svg'
 import { ReactComponent as SkillsImg2 } from 'shared/assets/img/skills-img_2.svg'
 import { InfoItem } from 'shared/ui/InfoItem/InfoItem';
-import { data_ru } from 'shared/data/skillsData';
+import { data } from 'shared/data/skillsData';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 
 interface SkillsItemProps {
@@ -14,14 +14,15 @@ interface SkillsItemProps {
   text: string[];
 }
 
-export const SkillsItem: FC<SkillsItemProps> = ({className, specification, text}) => {
+export const SkillsItem = memo((props: SkillsItemProps) => {
+  const {className, specification, text} = props;
   const {t} = useTranslation('skills');
 
   const [opened, setOpened] = useState<boolean>(false);
 
-  const onToggle = (event: React.MouseEvent<HTMLElement>) => {
+  const onToggle = useCallback((event: React.MouseEvent<HTMLElement>) => {
     setOpened(prev => !prev);
-  }
+  }, []);
 
   
 
@@ -51,7 +52,7 @@ export const SkillsItem: FC<SkillsItemProps> = ({className, specification, text}
       { className === 'inverted' ? <SkillsImg2 className='skills__bg-img' /> : <SkillsImg1 className='skills__bg-img' />}
       <ul>
         {text.map(item => (
-          <li>{item}</li>
+          <li>{t(item)}</li>
         ))}
       </ul>
       <Button theme={ButtonTheme.OUTLINED} onClick={onToggle}>
@@ -60,7 +61,7 @@ export const SkillsItem: FC<SkillsItemProps> = ({className, specification, text}
       <div className={classNames('skills__info-wrap', {'opened': opened}, [className])}>
         <div className="skills__info-padding">
           {/* @ts-ignore */}
-          {data_ru[specification].map(({title, icons, list}) => (
+          {data[specification].map(({title, icons, list}) => (
             <InfoItem 
               title={title} 
               icons={icons} 
@@ -68,7 +69,10 @@ export const SkillsItem: FC<SkillsItemProps> = ({className, specification, text}
             />
           ))}
         </div>
+        <Button theme={ButtonTheme.OUTLINED} onClick={onToggle}>
+          {!opened ? t('Details') : t('Hide')}
+        </Button>
       </div>
     </div>
   );
-};
+});

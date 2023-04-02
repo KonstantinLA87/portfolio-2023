@@ -1,18 +1,19 @@
 .NavbarLink {
-  color: #fff;
+  color: var(--inverted-color);
   text-decoration: none;
   padding: 10px 15px;
   background: transparent;
   border-radius: 4px;
   font-size: 17px;
+  font-weight: 400;
   line-height: 32px;
   transition: .1s;
   &:hover {
-    background: #04090f;
-    color: var(--primary-color);
+    background: var(--navbarLink-hover-bg);
+    color: var(--navbarLink-hover-color);
   }
   &.active {
-    background: #0A1826;
+    background: var(--bg-selected);
     cursor: auto;
     color: var(--primary-color);
   }

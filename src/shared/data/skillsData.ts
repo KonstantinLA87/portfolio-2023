@@ -1,95 +1,96 @@
-export const data_ru = {
+export const data = {
   design: [
     {
-      title: 'Adobe Suite',
+      title: 'dn_adobe_title',
       icons: ['i-ps.svg', 'i-ai.svg', 'i-ae.svg', 'i-xd.svg'],
       list: [
-        'Работа с растровыми изображениями, ретушь',
-        'Векторная графика, отрисовка иконок и т.д.',
-        'SVG-анимация, lottie-files, bodymovin...'
+        'dn_adobe_1',
+        'dn_adobe_2',
+        'dn_adobe_3'
       ]
     },
     {
-      title: 'Figma',
+      title: 'dn_figma_title',
       icons: ['i-figma.svg'],
       list: [
-        'С Figma на Ты',
-        'Создание макетов, auto-layouts, компоненты, разработка UI-китов и т.д.',
+        'dn_figma_1',
+        'dn_figma_2',
+        'dn_figma_3',
       ]
     },
     {
-      title: 'Вёрстка',
+      title: 'dn_layout_title',
       icons: ['i-html.svg', 'i-css.svg', 'i-scss.svg',],
       list: [
-        'Занимаюсь вёрсткой почти 10 лет',
-        'Адаптивная вёрстка, mobile-first, семантика',
-        'препроцессоры типа SASS и использование CSS-переменных',
+        'dn_layout_1',
+        'dn_layout_2',
+        'dn_layout_3'
       ]
     },
   ],
   frontend: [
     {
-      title: 'Языки',
+      title: 'fe_langs_title',
       icons: ['i-js.svg', 'i-ts.svg'],
       list: [
-        'Javascript - база, методы массивов, использование нативного JS без React',
-        'TypeScript - интерфейсы, типы, enu-ы, типизация всего что только можно (в процессе обучения и понимания)',
-        'Codewars - 6 kyu (особо не практикуюс, залез и сижу там на 6-м кю)'
+        'fe_langs_1',
+        'fe_langs_2',
+        'fe_langs_3'
       ]
     },
     {
-      title: 'Фреймворки / Библиотеки',
+      title: 'fe_libs_title',
       icons: ['i-react.svg', 'i-react-router.svg', 'i-redux.svg'],
       list: [
-        'Начал изучать React через 2 недели после начала изучения JS',
-        'Компонены, роутинг, стейт-менеджер Redux и Redux-toolkit...',
+        'fe_libs_1',
+        'fe_libs_2',
       ]
     },
     {
-      title: 'Тесты / Контроль',
+      title: 'fe_test_title',
       icons: ['i-jest.svg', 'i-storybook.svg', 'i-loki.svg'],
       list: [
-        'Написание unit-тестов (в процессе изучения)',
-        'Ведение storybook для визцального контроля компонентов. Декораторы',
-        'Немного работал с Loki для скриншотного контроля'
+        'fe_test_1',
+        'fe_test_2',
+        'fe_test_3',
       ]
     },
     {
-      title: 'Сборщик модулей',
+      title: 'fe_build_title',
       icons: ['i-webpack.svg'],
       list: [
-        'Сборка webpack для React приложения с нуля',
-        'Настройка и понимание базовых плагинов, линтов, Babel и т.д.',
+        'fe_build_1',
+        'fe_build_2',
       ]
     },
     {
-      title: 'Дистрибуторы',
+      title: 'fe_dist_title',
       icons: ['i-git.svg', 'i-github.svg', 'i-git-actions.svg'],
       list: [
-        'Работа с Git, сильно не углублялся, но база есть',
-        'Работа с git-actions, CI-pipline, для автоматизации разных видов проверок'
+        'fe_dist_1',
+        'fe_dist_2',
       ]
     },
     {
-      title: 'Линтеры',
+      title: 'fe_lint_title',
       icons: ['i-eslint.svg', 'i-stylelint.svg'],
       list: [
-        'Настройка линтеров с нуля и коррекция их поведения под себя'
+        'fe_lint_1'
       ]
     },
     {
-      title: 'Перевод',
+      title: 'fe_translate_title',
       icons: ['i-i18n.svg'],
       list: [
-        'Работа с i18next, собственно данная технология применена в моем прокте сайта-портфоило'
+        'fe_translate_1'
       ]
     },
     {
-      title: 'Архитектура',
+      title: 'fe_architect_title',
       icons: ['i-fsd.svg'],
       list: [
-        'FSD-архитектура при разработе крупного проекта',
-        'Основное понимание концепции'
+        'fe_architect_1',
+        'fe_architect_2',
       ]
     },
   ],

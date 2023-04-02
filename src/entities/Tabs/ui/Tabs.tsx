@@ -28,7 +28,6 @@ export const Tabs = memo((props: TabsProps) => {
           id={tab.id}
           text={tab.text}
           className={classNames('', {'active': tab.id === selectedId})}
-          // @ts-ignore
           onClick={() => onClick(tab.id)}
         >
           {tab.text}

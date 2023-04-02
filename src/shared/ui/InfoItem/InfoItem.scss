@@ -19,6 +19,8 @@
     
     ul {
       font-size: 14px;
+      
+      li:before { top: 7px;}
     }
   }
 }

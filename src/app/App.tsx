@@ -6,11 +6,13 @@ import { SkillsPage } from 'pages/SkillsPage';
 import { AboutPage } from 'pages/AboutPage';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { ContactsPage } from 'pages/ContactsPage';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Tooltip } from 'shared/ui/Tooltip/Tooltip';
 
 function App() {
 
   return (
-      <div className="App app_dark_theme">
+      <div className={classNames('app', {}, [])}>
         <Suspense fallback="">
           <Navbar />
           <Suspense fallback={<Loader />}>
@@ -22,6 +24,7 @@ function App() {
             </Routes>
           </Suspense>
         </Suspense>
+        <Tooltip />
       </div>
   );
 }
