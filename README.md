@@ -1,4 +1,4 @@
-# My Portfolia site
+# My Portfolio site
 
 ## Available Scripts
 
